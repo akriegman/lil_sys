@@ -1,6 +1,6 @@
 [submodule "nanoGPT"]
 	path = nanoGPT
-	url = git@github.com:karpathy/nanoGPT.git
+	url = https://github.com/karpathy/nanoGPT.git
 [submodule "LightZero"]
 	path = LightZero
 	url = git@github.com:opendilab/LightZero.git

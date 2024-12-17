@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function all {
+  python3 main.py
+}
+
+function install {
+  pip3 install --trusted-host pypi.python.org --user docker torch
+}
