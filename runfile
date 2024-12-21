@@ -1,5 +1,13 @@
 #!/bin/bash
 
 function ssh {
-	ssh broses@hoffman2.idre.ucla.edu
+  ssh broses@hoffman2.idre.ucla.edu
+}
+
+function all {
+  python3 main.py
+}
+
+function install {
+  pip3 install docker torch
 }
