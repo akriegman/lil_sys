@@ -6,7 +6,7 @@ from model import GPT, GPTConfig
 
 class DockerCommandEnv:
     def __init__(self):
-        self.client = docker.from_client()
+        self.client = docker.from_env()
         self.container = None
         self.terminal_buffer = ""
         self.temp_dir = tempfile.mkdtemp()

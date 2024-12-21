@@ -1,5 +1,6 @@
 from lzero.policy import MuZeroPolicy
 import torch
+from lzero.policy import POLICY_REGISTRY
 
 @POLICY_REGISTRY.register('command_muzero')
 class CommandMuZeroPolicy(MuZeroPolicy):
