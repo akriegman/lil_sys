@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function commit {
+	git add .
+	git commit -m"${1:-"no message"}"
+	git push
+}
