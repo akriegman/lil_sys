@@ -1,0 +1,5 @@
+#!/bin/bash
+
+function ssh {
+	ssh broses@hoffman2.idre.ucla.edu
+}
