@@ -8,6 +8,10 @@ main_config = dict(
         save_replay_episodes=1,
     ),
     policy=dict(
+        # Device configurations
+        cuda=True,
+        model_path=None,
+        # Model configurations
         model=dict(
             observation_shape=(3, 64, 64),  # Adjust based on your observation space
             action_space_size=4,  # Should match n_action
@@ -15,6 +19,19 @@ main_config = dict(
             representation_network_hidden_size=256,
             dynamics_network_hidden_size=256,
             prediction_network_hidden_size=256,
+        ),
+        # Training configurations
+        learn=dict(
+            update_per_collect=50,
+            batch_size=256,
+            learning_rate=0.003,
+            target_update_freq=100,
+        ),
+        # Collection configurations
+        collect=dict(
+            n_episode=8,
+            env_num=8,
+            n_step=200,
         ),
     ),
 )
