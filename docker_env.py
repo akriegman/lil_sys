@@ -8,8 +8,9 @@ from ding.envs.env.base_env import ENV_REGISTRY
 import numpy as np
 
 class DockerCommandEnv(BaseEnv):
-    def __init__(self):
+    def __init__(self, cfg=None):
         super().__init__()
+        self.cfg = cfg if cfg is not None else {}
         self.client = docker.from_env()
         self.container = None
         self.terminal_buffer = ""
