@@ -6,6 +6,7 @@ project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root / "LightZero"))
 sys.path.append(str(project_root / "nanoGPT"))
 
+from nanoGPT.model import GPT, GPTConfig
 from docker_env import DockerCommandEnv
 from lzero.entry import train_muzero
 from command_muzero_config import config, create_config

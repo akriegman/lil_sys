@@ -4,8 +4,15 @@ function ssh {
   ssh broses@hoffman2.idre.ucla.edu
 }
 
-function all {
-  python3 main.py
+function run {
+	git pull
+	python3 main.py
+}
+
+function push {
+	git add .
+	git commit -m "${1:-"no msg"}"
+	git push
 }
 
 function install {
