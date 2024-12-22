@@ -5,9 +5,11 @@ import torch
 from nanoGPT.model import GPT, GPTConfig
 from ding.envs import BaseEnv
 from ding.envs.env.base_env import ENV_REGISTRY
+import numpy as np
 
 class DockerCommandEnv(BaseEnv):
     def __init__(self):
+        super().__init__()
         self.client = docker.from_env()
         self.container = None
         self.terminal_buffer = ""
@@ -98,6 +100,32 @@ class DockerCommandEnv(BaseEnv):
         reward = float(initial_loss - loss)
         return reward
         
+    def close(self):
+        # Clean up any resources
+        pass
+
+    def seed(self, seed: int, dynamic_seed: bool = True) -> None:
+        self._seed = seed
+        self._dynamic_seed = dynamic_seed
+        np.random.seed(seed)
+
+    def __repr__(self) -> str:
+        return "DockerCommandEnv"
+
+    @property
+    def observation_space(self):
+        # Define your observation space
+        pass
+
+    @property
+    def action_space(self):
+        # Define your action space
+        pass
+
+    @property
+    def reward_space(self):
+        # Define reward space if needed
+        pass
 
 # Register the environment
 ENV_REGISTRY.register('docker_command', DockerCommandEnv)
