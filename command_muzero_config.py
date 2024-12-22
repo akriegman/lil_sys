@@ -40,13 +40,17 @@ main_config = EasyDict(main_config)
 # Create configuration
 create_config = dict(
     env=dict(
-        type='command',  # Your environment type
-        import_names=['docker_env'],  # Path to your environment
+        type='docker_command',
+        import_names=['docker_env'],
     ),
-    env_manager=dict(type='base'),
+    env_manager=dict(type='subprocess'),
     policy=dict(
-        type='muzero',  # Using standard MuZero algorithm
+        type='muzero',
         import_names=['lzero.policy.muzero'],
     ),
+    collector=dict(
+        type='episode_muzero',
+        import_names=['lzero.worker.muzero_collector'],
+    )
 )
 create_config = EasyDict(create_config) 

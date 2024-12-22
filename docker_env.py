@@ -3,8 +3,10 @@ import docker
 import tempfile
 import torch
 from nanoGPT.model import GPT, GPTConfig
+from ding.envs import BaseEnv
+from ding.envs.env.base_env import ENV_REGISTRY
 
-class DockerCommandEnv:
+class DockerCommandEnv(BaseEnv):
     def __init__(self):
         self.client = docker.from_env()
         self.container = None
@@ -95,4 +97,8 @@ class DockerCommandEnv:
         # Reward is the improvement in loss
         reward = float(initial_loss - loss)
         return reward
+        
+
+# Register the environment
+ENV_REGISTRY.register('docker_command', DockerCommandEnv)
         
