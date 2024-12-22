@@ -6,6 +6,10 @@ main_config = dict(
     env=dict(
         n_action=4,  # Adjust based on your command environment
         save_replay_episodes=1,
+        collector_env_num=8,
+        evaluator_env_num=3,
+        n_evaluator_episode=3,
+        manager=dict(shared_memory=False),
     ),
     policy=dict(
         # Device configurations
