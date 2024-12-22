@@ -16,5 +16,5 @@ function push {
 }
 
 function install {
-  pip3 install docker torch
+  pip3 install docker torch pyecharts numba transformers
 }

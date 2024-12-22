@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 # Add submodule paths
-project_root = Path(__file__).parent.parent
+project_root = Path(__file__)
 sys.path.append(str(project_root / "LightZero"))
 sys.path.append(str(project_root / "nanoGPT"))
 
