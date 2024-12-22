@@ -2,7 +2,7 @@ from typing import Dict, Any
 import docker
 import tempfile
 import torch
-from model import GPT, GPTConfig
+from nanoGPT.model import GPT, GPTConfig
 
 class DockerCommandEnv:
     def __init__(self):
