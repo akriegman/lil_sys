@@ -9,9 +9,11 @@ import numpy as np
 
 class DockerCommandEnv(BaseEnv):
     def __init__(self, cfg: dict = None):
-        cfg = cfg if cfg is not None else {}
-        super().__init__(cfg)
-        self.cfg = cfg
+        # Initialize without calling parent class __init__
+        self.cfg = cfg if cfg is not None else {}
+        self._init_flag = False  # Following MetaDrive pattern
+        
+        # Docker setup
         self.client = docker.from_env()
         self.container = None
         self.terminal_buffer = ""
